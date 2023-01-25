@@ -1,0 +1,56 @@
+﻿@using Core
+@model List<Team>
+  <div class="row">
+          
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Team Table</h4>
+                  <a class="btn btn-success" asp-action="Create">Create</a>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Image
+                          </th>
+                          <th>
+                            Name
+                          </th>
+                          <th>
+                            Position
+                          </th>
+                          <th>
+                           Actions
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          @foreach (Team item in Model)
+                            {
+                        <tr>
+                          <td class="py-1">
+                            <img src="~/assets/img/team/@item.Image" alt="image"/>
+                          </td>
+                          <td>
+                           @item.Name
+                          </td>
+                          <td>
+                          @item.Position
+                          </td>
+                          <td>
+                              <a class="btn btn-success"  asp-action="Detail" asp-route-id="@item.Id">Detail</a>
+                              <a class="btn btn-success">Update</a>
+                                  <a class="btn btn-success"  asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                          </td>
+                        </tr>  
+                            }
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          </div>

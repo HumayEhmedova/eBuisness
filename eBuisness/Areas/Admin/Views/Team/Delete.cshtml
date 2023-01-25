@@ -1,0 +1,17 @@
+﻿
+@using Core
+@model Team
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<img  src="~/assets/img/team/@Model.Image"/>
+<p>@Model.Name</p>
+<p>@Model.Position</p>
+<form method="post">
+    <button class="btn btn-danger"> Delete</button>
+    <button asp-action="Index"> Go back</button>
+</form>
+
+
+
